@@ -1,0 +1,19 @@
+<!-- <h1 class="bg-primary">from app component</h1> -->
+<!-- <h1>@Input</h1>
+<app-home [name11]="title"></app-home> -->
+<!-- <app-core></app-core> -->
+<!-- <app-market></app-market> -->
+<!-- <app-movie [movtit]="movidTitle"></app-movie> -->
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>data of parent {{data}}</h1>
+            <app-child (updateDataFromChild)="updateData($event)"></app-child>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </div>
+</div>
+
+
+

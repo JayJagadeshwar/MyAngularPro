@@ -1,0 +1,47 @@
+<p>movie name : {{movtit}} </p>
+<input type="text" [(ngModel)]="msg">
+<input type="button" value="add to msgs list" (click)="addMessages()">
+<input type="button" value="delete first msg" (click)="deleteFirstMessage()">
+<div>
+    <ul *ngFor="let msg of msgs">
+        <li>{{msg}}</li>
+    </ul>
+</div>
+ .
+<div *ngIf="show;then data else nodata"></div>
+
+<ng-template #data>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</ng-template>
+
+<ng-template #nodata>
+    <p>No data is available</p>
+</ng-template>
+
+<div class="table">
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of EmployeesList;
+            trackBy : refreshEmployees">
+                <td>{{employee.name}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<input type="button" value="refresh" (click)="refresh()">
+
+

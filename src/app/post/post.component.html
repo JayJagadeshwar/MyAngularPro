@@ -1,0 +1,8 @@
+<div>
+    Title : <h1>{{post.title}}</h1>
+    Description : <p>{{post.description}}</p>
+    <img src="{{post.imagePath}}" alt="" class="img-fluid">
+    Author : <h2>{{post.author}}</h2>
+    <input class="btn btn-primary" type="button" value="Edit" (click)="onEdit()"> | 
+    <input class="btn btn-danger" type="button" value="Delete" (click)="deletethePost()">
+</div>

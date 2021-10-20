@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1 *ngIf = "editMode ===  false">Post Add</h1>
+            <h1 *ngIf = "editMode ===  true">Post Edit</h1>
+            <form [formGroup]="form" (ngSubmit) = "onSubmitPost()">
+                <div class="mb-3">
+                    <label class="form-label">Enter Title</label>
+                    <input type="text" class="form-control" formControlName="title">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" rows="3" formControlName="description"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">ImagePath</label>
+                    <input type="text" class="form-control" formControlName="imagePath">
+                    <img class="img-fluid" src="{{form.value.imagePath}}" alt="">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Author</label>
+                    <input type="text" class="form-control" formControlName="author">
+                  </div>
+                  <input type="submit" value="Add To Countries List" class="btn btn-success" [disabled]="form.invalid"> | 
+                  <input type="reset" value="Clear" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
