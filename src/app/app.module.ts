@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,36 +14,37 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { AuthComponent } from './auth/auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ChildComponent } from './child/child.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParentComponent } from './parent/parent.component';
+import { PromisesExComponent } from './promises-ex/promises-ex.component';
 
-
-
-const routes : Routes = [
+const routes: Routes = [
   //{
-    //path : '',
-    //redirectTo : 'post-list',
-    //pathMatch : 'full'    
-   //},
+  //path : '',
+  //redirectTo : 'post-list',
+  //pathMatch : 'full'
+  //},
   {
-   path : 'post-add',
-   component : PostEditComponent
+    path: 'post-add',
+    component: PostEditComponent,
   },
   {
-    path : 'post-edit/:index',
-    component : PostEditComponent
-   },
+    path: 'post-edit/:index',
+    component: PostEditComponent,
+  },
   {
-    path : 'post-list',
-    component : PostListComponent
-   },
-   {
-    path : 'auth',
-    component : AuthComponent
-   },
-   {
-    path : 'child',
-    component : ChildComponent
-   }
-]
+    path: 'post-list',
+    component: PostListComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
+  },
+  {
+    path: 'child',
+    component: ChildComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -57,13 +59,19 @@ const routes : Routes = [
     PostEditComponent,
     AuthComponent,
     ChildComponent,
+    ParentComponent,
+    PromisesExComponent,
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot(routes),ReactiveFormsModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
   ],
+  exports: [MatButtonModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-
-
-export class AppModule { }
+export class AppModule {}

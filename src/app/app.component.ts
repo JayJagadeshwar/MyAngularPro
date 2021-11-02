@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Angular from parent app component';
 
@@ -15,6 +16,5 @@ export class AppComponent {
   updateData(str : string){
     this.data = str;
   }
-
 
 }
