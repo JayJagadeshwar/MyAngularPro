@@ -1,3 +1,4 @@
+import { IntervalComponent } from './interval/interval.component';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,10 @@ import { ChildComponent } from './child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParentComponent } from './parent/parent.component';
 import { PromisesExComponent } from './promises-ex/promises-ex.component';
+import { ObservableComponent } from './observable/observable.component';
+import { ListComponent } from './list/list.component';
+import { FormEventComponent } from './form-event/form-event.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   //{
@@ -24,25 +29,20 @@ const routes: Routes = [
   //redirectTo : 'post-list',
   //pathMatch : 'full'
   //},
+  { path: 'login', component:  LoginComponent},
+  { path: 'post-add', component: PostEditComponent },
+  { path: 'post-edit/:index', component: PostEditComponent },
+  { path: 'post-list', component: PostListComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: 'child', component: ChildComponent },
   {
-    path: 'post-add',
-    component: PostEditComponent,
-  },
-  {
-    path: 'post-edit/:index',
-    component: PostEditComponent,
-  },
-  {
-    path: 'post-list',
-    component: PostListComponent,
-  },
-  {
-    path: 'auth',
-    component: AuthComponent,
-  },
-  {
-    path: 'child',
-    component: ChildComponent,
+    path: 'observables',
+    component: ObservableComponent,
+    children: [
+      { path: '', component: ListComponent },
+      { path: 'formEvent', component: FormEventComponent },
+      { path: 'interval', component: IntervalComponent },
+    ],
   },
 ];
 
@@ -61,6 +61,10 @@ const routes: Routes = [
     ChildComponent,
     ParentComponent,
     PromisesExComponent,
+    ObservableComponent,
+    ListComponent,
+    FormEventComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
