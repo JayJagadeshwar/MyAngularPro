@@ -12,10 +12,17 @@ export class ParentComponent implements OnInit {
   increase() {
     this.childcomponent.incresaseCounter();
   }
+
   decrease() {
     this.childcomponent.decreaseCounter();
   }
 
+  addDataToParent(strData: string) {
+    console.log(strData);
+  }
+
   constructor() {}
   ngOnInit(): void {}
+
+  ngAfterViewInit() {}
 }

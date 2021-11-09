@@ -9,6 +9,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ChildComponent implements OnInit {
   @Output() updateDataFromChild = new EventEmitter<string>();
 
+  @Output() strData = new EventEmitter<string>();
+
   public emp: any[] = [
     {
       name: 'jay',
@@ -30,5 +32,6 @@ export class ChildComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateDataFromChild.emit('asdfwqerqewtegf');
+    this.strData.emit('emitting from child data');
   }
 }

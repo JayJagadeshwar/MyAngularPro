@@ -1,4 +1,4 @@
-<app-child></app-child>
+<app-child (strData)="addDataToParent($event)"></app-child>
 <br />
 <input mat-raised-button color="primary" type="button" value="increaseCounter" (click)="increase()"><br />
 <input type="button" value="decreaseCounter" (click)="decrease()">

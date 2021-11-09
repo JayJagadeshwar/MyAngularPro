@@ -22,6 +22,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { ListComponent } from './list/list.component';
 import { FormEventComponent } from './form-event/form-event.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   //{
@@ -29,7 +30,7 @@ const routes: Routes = [
   //redirectTo : 'post-list',
   //pathMatch : 'full'
   //},
-  { path: 'login', component:  LoginComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'post-add', component: PostEditComponent },
   { path: 'post-edit/:index', component: PostEditComponent },
   { path: 'post-list', component: PostListComponent },
@@ -73,6 +74,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpClientModule,
   ],
   exports: [MatButtonModule],
   providers: [],
