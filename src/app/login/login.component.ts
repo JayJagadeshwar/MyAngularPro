@@ -1,7 +1,5 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { retry, catchError } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -36,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.params.email = this.loginForm.value.email;
     this.params.password = this.loginForm.value.password;
     console.log(JSON.stringify(this.params));
+
     this.http
       .post<any>('http://localhost:55887/api/login', this.params)
       .subscribe(
@@ -46,7 +45,9 @@ export class LoginComponent implements OnInit {
         },
         (err) => {
           console.log(err);
+
           alert('User Does not Exist');
+          this.loginForm.reset();
         }
       );
   }

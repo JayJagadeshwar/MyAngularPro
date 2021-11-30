@@ -1,8 +1,20 @@
-import { IntervalComponent } from './interval/interval.component';
-import { MatButtonModule } from '@angular/material/button';
+//Angular Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Angular Material Modules
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+
+//component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CoreComponent } from './core/core.component';
@@ -13,16 +25,18 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
 import { AuthComponent } from './auth/auth.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ChildComponent } from './child/child.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParentComponent } from './parent/parent.component';
 import { PromisesExComponent } from './promises-ex/promises-ex.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ListComponent } from './list/list.component';
 import { FormEventComponent } from './form-event/form-event.component';
+import { IntervalComponent } from './interval/interval.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FilterRxjsExComponent } from './filter-rxjs-ex/filter-rxjs-ex.component';
+import { TeamLeadProfilesComponent } from './team-lead-profiles/team-lead-profiles.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PostService } from './post.service';
 
 const routes: Routes = [
   //{
@@ -36,6 +50,8 @@ const routes: Routes = [
   { path: 'post-list', component: PostListComponent },
   { path: 'auth', component: AuthComponent },
   { path: 'child', component: ChildComponent },
+  { path: 'teamLeads', component: TeamLeadProfilesComponent },
+  { path: 'dashboard', component: DashboardComponent },
   {
     path: 'observables',
     component: ObservableComponent,
@@ -43,6 +59,7 @@ const routes: Routes = [
       { path: '', component: ListComponent },
       { path: 'formEvent', component: FormEventComponent },
       { path: 'interval', component: IntervalComponent },
+      { path: 'filter', component: FilterRxjsExComponent },
     ],
   },
 ];
@@ -66,6 +83,9 @@ const routes: Routes = [
     ListComponent,
     FormEventComponent,
     LoginComponent,
+    FilterRxjsExComponent,
+    TeamLeadProfilesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,9 +95,14 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     HttpClientModule,
+    MatCardModule,
+    MatSliderModule,
+    MatDividerModule,
+    MatListModule,
+    MatTableModule,
   ],
-  exports: [MatButtonModule],
-  providers: [],
+  exports: [MatButtonModule, MatCardModule, MatDividerModule, MatListModule],
+  providers: [PostService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
